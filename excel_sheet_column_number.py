@@ -22,4 +22,4 @@ def titleToNumber(s):
     #     total += (ord(c.upper()) - 64) * pow(26, len(s)-i-1)
     #
     # return total
-print titleToNumber("AA")
+print titleToNumber("ABC")
