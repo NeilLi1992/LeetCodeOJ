@@ -55,4 +55,49 @@ class Solution:
 
             self.search(node.left, level+1, levelStack)
             self.search(node.right, level+1, levelStack)
-        
+
+# # A better recursive solution:
+# class Solution:
+#     # @param root, a tree node
+#     # @return a boolean
+#     def isSymmetric(self, root):
+#         if not root:
+#             return True
+#         else:
+#             return self.check_symmetry(root.left, root.right)
+#
+#     def check_symmetry(self, node1, node2):
+#
+#         if not node1 and not node2:
+#             return True
+#         elif not node1 or not node2:
+#             return False
+#
+#         return (node1.val == node2.val and
+#             self.check_symmetry(node1.left, node2.right) and
+#             self.check_symmetry(node1.right, node2.left))
+
+# # A recursive solution
+# class Solution2:
+#   def isSymmetric(self, root):
+#     if root is None:
+#       return True
+#
+#     stack = [[root.left, root.right]]
+#
+#     while len(stack) > 0:
+#       pair = stack.pop(0)
+#       left = pair[0]
+#       right = pair[1]
+#
+#       if left is None and right is None:
+#         continue
+#       if left is None or right is None:
+#         return False
+#       if left.val == right.val:
+#         stack.insert(0, [left.left, right.right])
+#
+#         stack.insert(0, [left.right, right.left])
+#       else:
+#         return False
+#     return True
