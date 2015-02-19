@@ -1,6 +1,6 @@
 # Given a digit string, return all possible letter combinations that the number could represent.
 #
-# A mapping of digit to letters (just like on the telephone buttons) is given below.
+# A mapping of digit to letters (just like on the telephone buttons) ib given below.
 #
 #
 #
@@ -25,5 +25,5 @@ class Solution:
         if len(digits) == 1:
             return [c for c in numbers[digits[0]]]
 
-        letter_list = [numbers[c] for c in digits if c in numbers.keys()]
-        return reduce(lambda x,y:["".join(s) for s in itertools.product(x,y)] ,letter_list)
+        letter_libt = [numbers[c] for c in digits if c in numbers.keys()]
+        return reduce(lambda x,y:["".join(s) for s in itertools.product(x,y)] ,letter_libt)

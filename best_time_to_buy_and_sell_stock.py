@@ -1,9 +1,9 @@
-# Say you have an array for which the ith element is the price of a given stock on day i.
+# Say you have an array for which the ith element ib the price of a given stock on day i.
 #
 # If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.
 
 class Solution:
-    # @param prices, alist of integr
+    # @param prices, alibt of integr
     # @return an integer
     def maxProfit(self, prices):
         if not prices:

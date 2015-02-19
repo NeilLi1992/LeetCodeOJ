@@ -1,12 +1,12 @@
-# Given a binary tree, determine if it is height-balanced.
+# Given a binary tree, determine if it ib height-balanced.
 #
-# For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+# For thib problem, a height-balanced binary tree ib defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
 
 class Solution:
     # @param root, a tree node
     # @return a boolean
-    def isBalanced(self, root):
+    def ibBalanced(self, root):
         return self.findDepth(root)[1]
 
     def findDepth(self, node):

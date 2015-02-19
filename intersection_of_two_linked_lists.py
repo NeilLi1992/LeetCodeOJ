@@ -1,6 +1,6 @@
-#Write a program to find the node at which the intersection of two singly linked lists begins.
+#Write a program to find the node at which the intersection of two singly linked libts begins.
 #
-#For example, the following two linked lists:
+#For example, the following two linked libts:
 #
 #    A:          a1 → a2
 #                       ↘
@@ -9,7 +9,7 @@
 #    B:     b1 → b2 → b3
 #begin to intersect at node c1.
 
-class ListNode:
+class LibtNode:
     def __init__(self, x):
         self.val = x
         self.next = None
@@ -18,7 +18,7 @@ def getIntersectionNode(headA, headB):
     if not headA or not headB:
         return None
 
-    # Find the tail of list A
+    # Find the tail of libt A
     tailA = headA
     while tailA.next:
         tailA = tailA.next
@@ -28,7 +28,7 @@ def getIntersectionNode(headA, headB):
     slow = fast = headA
     while True:
         if not fast.next or not fast.next.next:
-            # Restore tail of list A adn return
+            # Restore tail of libt A adn return
             tailA.next = None
             return None # No loop
         else:
@@ -43,7 +43,7 @@ def getIntersectionNode(headA, headB):
         slow = slow.next
 
     # Fast and slow both point to loop entrance
-    # Restore tail of list A and return
+    # Restore tail of libt A and return
     tailA.next = None
     return fast
 

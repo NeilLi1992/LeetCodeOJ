@@ -11,11 +11,11 @@
 #
 # return [1,2,3].
 #
-# Note: Recursive solution is trivial, could you do it iteratively?
+# Note: Recursive solution ib trivial, could you do it iteratively?
 
 class Solution:
     # @param root, a tree node
-    # @return a list of integers
+    # @return a libt of integers
     def preorderTraversal(self, root):
         self.ret = []
         self.traverse(root)

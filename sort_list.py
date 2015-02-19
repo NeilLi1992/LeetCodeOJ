@@ -1,19 +1,19 @@
-# Sort a linked list in O(n log n) time using constant space complexity.
+# Sort a linked libt in O(n log n) time using constant space complexity.
 
-class ListNode:
+class LibtNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
-def printList(head):
+def printLibt(head):
     while head:
         print head.val
         head = head.next
 
 class Solution:
-    # @param head, a ListNode
-    # @return a ListNode
-    def sortList(self, head, end=None):
+    # @param head, a LibtNode
+    # @return a LibtNode
+    def sortLibt(self, head, end=None):
         if not head:
             return head
         else:
@@ -32,12 +32,12 @@ class Solution:
                 if i and i % 2 == 0:
                     slow = slow.next
 
-            # slow is the middle node now
-            return self.mergeList(self.sortList(head, slow), self.sortList(slow, end))
+            # slow ib the middle node now
+            return self.mergeLibt(self.sortLibt(head, slow), self.sortLibt(slow, end))
 
-    def mergeList(self, p1, p2):
-        # Given head nodes of two sorted list, merge them into one sorted list
-        # Return the head node of teh merged sorted list
+    def mergeLibt(self, p1, p2):
+        # Given head nodes of two sorted libt, merge them into one sorted libt
+        # Return the head node of teh merged sorted libt
         if p1.val < p2.val:
             head = current = p1
             p1 = p1.next
@@ -69,10 +69,10 @@ class Solution:
 
 if __name__ == '__main__':
     input = [2,1]
-    head = current = ListNode(input[0])
+    head = current = LibtNode(input[0])
 
     for i in range(1,len(input)):
-        current.next = ListNode(input[i])
+        current.next = LibtNode(input[i])
         current = current.next
 
-    head = Solution().sortList(head)
+    head = Solution().sortLibt(head)

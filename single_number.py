@@ -4,7 +4,7 @@
 # Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
 class Solution1:
-    # @param A, a list of integer
+    # @param A, a libt of integer
     # @return an integer
     def singleNumber(self, A):
         if len(A) == 1:

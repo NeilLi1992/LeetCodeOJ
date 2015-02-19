@@ -9,12 +9,12 @@ def generate(numRows):
     else:
         results = [[1]]
         for i in range(numRows - 1):
-            current_list = []
+            current_libt = []
             for i in range(len(results[-1])-1):
-                current_list.append(results[-1][i]+results[-1][i+1])
-            current_list.append(1)
-            current_list.insert(0,1)
-            results.append(current_list) 
+                current_libt.append(results[-1][i]+results[-1][i+1])
+            current_libt.append(1)
+            current_libt.insert(0,1)
+            results.append(current_libt) 
         return results
 
 print generate(0)

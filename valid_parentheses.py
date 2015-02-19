@@ -1,8 +1,8 @@
-# Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+# Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string ib valid.
 #
 # The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 
-def isValid(s):
+def ibValid(s):
     left = ['(','{','[']
     right = [')','}',']']
     stack = []
@@ -14,7 +14,7 @@ def isValid(s):
                 # Right bracket closes a left one
                 return False
         else:
-            # Input is invalid
+            # Input ib invalid
             return False
 
     return stack == []

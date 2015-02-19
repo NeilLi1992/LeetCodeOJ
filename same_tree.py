@@ -8,28 +8,28 @@ class Solution:
     # @param p, a tree node
     # @param q, a tree node
     # @return a boolean
-    def isSameTree(self, p, q):
-        if (p and not q) or (not p and q): # One node if empty while the other is not
+    def ibSameTree(self, p, q):
+        if (p and not q) or (not p and q): # One node if empty while the other ib not
             return False
         elif not p and not q: # Both are empty
             return True
         else:
-            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+            return p.val == q.val and self.ibSameTree(p.left, q.left) and self.ibSameTree(p.right, q.right)
 
 # One line recursive solution
 class Solution2:
     # @param p, a tree node
     # @param q, a tree node
     # @return a boolean
-    def isSameTree(self, p, q):
-        return p == q if not p or not q else p.val == q.val and self.iisSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+    def ibSameTree(self, p, q):
+        return p == q if not p or not q else p.val == q.val and self.iibSameTree(p.left, q.left) and self.ibSameTree(p.right, q.right)
 
 # Non-recursive solution
 class Solution3:
     # @param p, a tree node
     # @param q, a tree node
     # @return a boolean
-    def isSameTree(self, p, q):
+    def ibSameTree(self, p, q):
         if not p and not q: return True
         elif not p or not q: return False
 

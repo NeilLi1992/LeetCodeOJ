@@ -1,4 +1,4 @@
-# Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
+# Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" ib "abc", which the length ib 3. For "bbbbb" the longest substring ib "b", with the length of 1.
 
 class Solution1:
     # @return an integer
@@ -34,9 +34,9 @@ class Solution:
             direct_go = False
             for j in range(i+1, len(s)):
                 has_repeat = False
-                index_list = stats[s[j]]
+                index_libt = stats[s[j]]
                 dup_index = 0
-                for index in index_list:
+                for index in index_libt:
                     if i <= index < j:
                         has_repeat = True
                         dup_index = index

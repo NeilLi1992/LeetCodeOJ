@@ -16,7 +16,7 @@
 
 class Solution:
     # @param root, a tree node
-    # @return a list of lists of integers
+    # @return a libt of libts of integers
     def levelOrder(self, root):
         result = []
         self.search(root, 0, result)

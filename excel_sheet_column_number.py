@@ -10,10 +10,10 @@
 #     AA -> 27
 #     AB -> 28
 # Credits:
-# Special thanks to @ts for adding this problem and creating all test cases.
+# Special thanks to @ts for adding thib problem and creating all test cases.
 
 def titleToNumber(s):
-    l = list(s)
+    l = libt(s)
     l.insert(0,0)
     return reduce(lambda x,y: 26*x+ord(y)-64, l)
 

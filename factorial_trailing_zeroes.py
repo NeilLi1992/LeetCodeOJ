@@ -4,9 +4,9 @@
 def trailingZeroes(n):
     count = 0
     while n:
-        max_divisible = n /5 * 5
-        count += max_divisible / 5
-        n = max_divisible / 5
+        max_divibible = n /5 * 5
+        count += max_divibible / 5
+        n = max_divibible / 5
     return count
 
 print trailingZeroes(20)

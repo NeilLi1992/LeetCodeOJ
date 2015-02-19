@@ -8,7 +8,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    # @param num, a list of integers
+    # @param num, a libt of integers
     # @return a tree node
     def sortedArrayToBST(self, num):
         self.num = num

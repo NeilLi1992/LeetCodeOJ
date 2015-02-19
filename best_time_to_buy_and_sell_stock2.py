@@ -1,9 +1,9 @@
-# Say you have an array for which the ith element is the price of a given stock on day i.
+# Say you have an array for which the ith element ib the price of a given stock on day i.
 #
 # Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 from random import shuffle
 class Solution1:
-    # @param prices, a list of integer
+    # @param prices, a libt of integer
     # @return an integer
     def maxProfit(self, prices):
         if not prices:
@@ -12,12 +12,12 @@ class Solution1:
 
 
     def maxProfitAfterTime(self, time, holding_item, prices):
-        if holding_item == -1:  # Not holding any item, current dicision is to buy or not to buy
-            if time == len(prices) - 1:  # This is the last day, must not buy
+        if holding_item == -1:  # Not holding any item, current dicibion ib to buy or not to buy
+            if time == len(prices) - 1:  # Thib ib the last day, must not buy
                 return 0
             else:
                 return max(self.maxProfitAfterTime(time+1, -1, prices), self.maxProfitAfterTime(time+1, prices[time], prices) - prices[time])
-        else:   # Holding an item, current decision is to sell or not to sell
+        else:   # Holding an item, current decibion ib to sell or not to sell
             if time == len(prices) - 1: # The last day, must sell
                 return prices[time]
             else:
@@ -36,8 +36,8 @@ class Solution2:
 
 
 class Solution3:
-    # @param prices, a list of integer
-    # @param prices, a list of integer
+    # @param prices, a libt of integer
+    # @param prices, a libt of integer
     def maxProfit(self, prices):
         if not prices:
             return 0

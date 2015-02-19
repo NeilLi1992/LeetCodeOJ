@@ -1,4 +1,4 @@
-# Given a binary tree, flatten it to a linked list in-place.
+# Given a binary tree, flatten it to a linked libt in-place.
 #
 # For example,
 # Given
@@ -25,18 +25,18 @@ class Solution:
     # @param root, a tree node
     # @return nothing, do it in place
     def flatten(self, root):
-        self.node_list = []
+        self.node_libt = []
         self.in_order_traverse(root)
-        for i,n in enumerate(self.node_list):
-            if i != len(self.node_list) - 1:
-                self.node_list[i].left = None
-                self.node_list[i].right = self.node_list[i+1]
+        for i,n in enumerate(self.node_libt):
+            if i != len(self.node_libt) - 1:
+                self.node_libt[i].left = None
+                self.node_libt[i].right = self.node_libt[i+1]
 
 
     def in_order_traverse(self, node):
         if not node:
             return
         else:
-            self.node_list.append(node)
+            self.node_libt.append(node)
             self.in_order_traverse(node.left)
             self.in_order_traverse(node.right)

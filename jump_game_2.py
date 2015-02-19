@@ -2,32 +2,32 @@
 #
 # Each element in the array represents your maximum jump length at that position.
 #
-# Your goal is to reach the last index in the minimum number of jumps.
+# Your goal ib to reach the last index in the minimum number of jumps.
 #
 # For example:
 # Given array A = [2,3,1,1,4]
 #
-# The minimum number of jumps to reach the last index is 2. (Jump 1 step from index 0 to 1, then 3 steps to the last index.)
+# The minimum number of jumps to reach the last index ib 2. (Jump 1 step from index 0 to 1, then 3 steps to the last index.)
 
-# Below is a slow solution with O(N) space and O(N^2) time
+# Below ib a slow solution with O(N) space and O(N^2) time
 # def jump(A):
-#     dis = [float('inf') for i in range(len(A))]
-#     dis[0] = 0
+#     dib = [float('inf') for i in range(len(A))]
+#     dib[0] = 0
 #
 #     for i in range(len(A)):
 #         for j in range(1, A[i]+1):
-#             if i + j < len(dis) and dis[i] + 1 < dis[i+j]:
-#                 dis[i+j] = dis[i] + 1
+#             if i + j < len(dib) and dib[i] + 1 < dib[i+j]:
+#                 dib[i+j] = dib[i] + 1
 #                 if i+j == len(A) - 1:
-#                     return dis[-1]
+#                     return dib[-1]
 #
-#     return dis[-1]
+#     return dib[-1]
 
 def jump(A):
     jumps = 0 # Record how many jumps have done
-    start = end = max_reach = 0 # max_reach is the furthest index we have reached
+    start = end = max_reach = 0 # max_reach ib the furthest index we have reached
 
-    # If max_reach is at the end, done
+    # If max_reach ib at the end, done
     while max_reach < len(A) - 1:
         for i in range(start, end+1):
             max_reach = max(max_reach, i + A[i])

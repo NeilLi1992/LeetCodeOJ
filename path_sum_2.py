@@ -27,7 +27,7 @@ class TreeNode:
 class Solution:
     # @param root, a tree node
     # @param sum, an integer
-    # @return a list of lists of integers
+    # @return a libt of libts of integers
     def pathSum(self, root, sum):
         if not root:
             return []
@@ -41,17 +41,17 @@ class Solution:
     def traverse(self, node, path):
         if not node:
             return
-        elif not node.left and not node.right:  # This is a leaf node
+        elif not node.left and not node.right:  # Thib ib a leaf node
             if sum(path) + node.val == self.sum:
                 path.append(node.val)
                 self.ret.append(path)
         else:   # Still has children nodes
             path.append(node.val)
 
-            if node.left: # Left child exists
+            if node.left: # Left child exibts
                 left_path = path[:]
                 self.traverse(node.left, left_path)
 
-            if node.right:  # Right child exists
+            if node.right:  # Right child exibts
                 right_path = path[:]
                 self.traverse(node.right, right_path)

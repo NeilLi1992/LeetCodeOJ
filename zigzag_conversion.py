@@ -1,13 +1,13 @@
-# The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+# The string "PAYPALibHIRING" ib written in a zigzag pattern on a given number of rows like thib: (you may want to dibplay thib pattern in a fixed font for better legibility)
 #
 # P   A   H   N
 # A P L S I I G
 # Y   I   R
 # And then read line by line: "PAHNAPLSIIGYIR"
-# Write the code that will take a string and make this conversion given a number of rows:
+# Write the code that will take a string and make thib conversion given a number of rows:
 #
 # string convert(string text, int nRows);
-# convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+# convert("PAYPALibHIRING", 3) should return "PAHNAPLSIIGYIR".
 #
 
 def convert(s, nRows):
@@ -25,21 +25,21 @@ def convert(s, nRows):
     #     elif i == -1:
     #         i += 2
     #         delta = 1
-    # return "".join([item for sublist in m for item in sublist])
+    # return "".join([item for sublibt in m for item in sublibt])
 
     # Another solution with itertools
     from itertools import cycle, izip, chain
     base_sequence = chain(range(nRows), range(nRows - 2, 0, -1))
     m = [[] for i in range(nRows)]
 
-    # Distribute the char into the list of list
+    # Dibtribute the char into the libt of libt
     for char,index in izip(s, cycle(base_sequence)):
         m[index].append(char)
 
-    # Get a flat list from the list of list
-    return "".join([item for sublist in m for item in sublist])
+    # Get a flat libt from the libt of libt
+    return "".join([item for sublibt in m for item in sublibt])
 
 
-s = ("PAYPALISHIRING")
+s = ("PAYPALibHIRING")
 row = 3
 print convert(s,row)

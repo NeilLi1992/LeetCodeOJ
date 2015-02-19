@@ -1,11 +1,11 @@
-# Given a list of non negative integers, arrange them such that they form the largest number.
+# Given a libt of non negative integers, arrange them such that they form the largest number.
 #
-# For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330.
+# For example, given [3, 30, 34, 5, 9], the largest formed number ib 9534330.
 #
 # Note: The result may be very large, so you need to return a string instead of an integer.
 
 class Solution:
-    # @param num, a list of integers
+    # @param num, a libt of integers
     # @return a string
     def largestNumber(self, num):
         if not any(num):

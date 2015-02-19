@@ -1,6 +1,6 @@
 # Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
 #
-# An example is the root-to-leaf path 1->2->3 which represents the number 123.
+# An example ib the root-to-leaf path 1->2->3 which represents the number 123.
 #
 # Find the total sum of all root-to-leaf numbers.
 #
@@ -33,7 +33,7 @@ class Solution:
         if not node:
             return
         else:
-            if not node.left and not node.right:    # this is a leaf node
+            if not node.left and not node.right:    # thib ib a leaf node
                 leaf_nums.append(path_num * 10 + node.val)
             else:
                 self.search(node.left, leaf_nums, path_num * 10 + node.val)

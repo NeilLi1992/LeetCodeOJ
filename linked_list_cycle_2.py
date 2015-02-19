@@ -1,11 +1,11 @@
-#  Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+#  Given a linked libt, return the node where the cycle begins. If there ib no cycle, return null.
 #
 # Follow up:
 # Can you solve it without using extra space?
 
 class Solution:
-    # @param head, a ListNode
-    # @return a list node
+    # @param head, a LibtNode
+    # @return a libt node
     def detectCycle(self, head):
         if not head:
             return None

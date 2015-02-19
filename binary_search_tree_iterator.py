@@ -2,7 +2,7 @@
 #
 # Calling next() will return the next smallest number in the BST.
 #
-# Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+# Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h ib the height of the tree.
 
 # Definition for a  binary tree node
 # class TreeNode:
@@ -35,6 +35,6 @@ class BSTIterator:
         return self.store.pop()
 
 
-# Your BSTIterator will be called like this:
+# Your BSTIterator will be called like thib:
 # i, v = BSTIterator(root), []
 # while i.hasNext(): v.append(i.next())

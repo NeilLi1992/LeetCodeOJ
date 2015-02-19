@@ -24,17 +24,17 @@
 #     for i in range(n_start+1):
 #         for j in range(p_start, len(num)):
 #             remainder = 0 - num[i] - num[j]
-#             exists = False
+#             exibts = False
 #
 #             if remainder <= num[n_start]:
-#                 exists = remainder in num[0:i] or remainder in num[i+1:n_start+1]
+#                 exibts = remainder in num[0:i] or remainder in num[i+1:n_start+1]
 #             elif remainder > num[n_start] and remainder <= num[p_start]:
-#                 exists = remainder in num[n_start+1:p_start+1]
+#                 exibts = remainder in num[n_start+1:p_start+1]
 #             elif remainder > num[p_start]:
-#                 exists = remainder in num[p_start+1:j] or remainder in num[j+1:]
+#                 exibts = remainder in num[p_start+1:j] or remainder in num[j+1:]
 #
 #
-#             if exists:
+#             if exibts:
 #                 triplet = sorted([num[i], num[j], remainder])
 #                 if triplet not in result:
 #                     result.append(triplet)
@@ -61,7 +61,7 @@
 #                     if not sum([num[i], num[j], num[k]]):
 #                         result.add(tuple(sorted([num[i], num[j], num[k]])))
 #
-#         return list(result)
+#         return libt(result)
 
 # Solution 3 - still too slow
 # def threeSum(num):
@@ -83,28 +83,28 @@
 #                 for x,y in filter(lambda (x,y):x!=i and y!=i, two_sums[remainder]):
 #                     result.add(tuple(sorted([n,num[x],num[y]])))
 #
-#         return list(result)
+#         return libt(result)
 
 def threeSum(num):
     num.sort()
-    returnList = []
+    returnLibt = []
 
     if len(num) < 3:
-        return returnList
+        return returnLibt
     else:
         for i in range(len(num)-2):
             if i > 0 and num[i] == num[i-1]:
-                continue # This num is equal to previous num, skip it
+                continue # Thib num ib equal to previous num, skip it
             else:
                 num1 = num[i]
-                remainder = 0 - num1 # This is what we need to find
+                remainder = 0 - num1 # Thib ib what we need to find
                 begin = i + 1
                 end = len(num) - 1
                 while begin < end:
                     num2 = num[begin]
                     num3 = num[end]
                     if num2 + num3 == remainder:    # Successfully find a triplet
-                        returnList.append([num1, num2,num3])
+                        returnLibt.append([num1, num2,num3])
                         # Begin and end both go to the next different number
                         begin += 1
                         while begin < end and num[begin] == num[begin-1]:
@@ -127,7 +127,7 @@ def threeSum(num):
                             end -= 1
 
 
-        return returnList
+        return returnLibt
 
 
 # S = [-1, 0, 1, 2, -1, -4]

@@ -1,15 +1,15 @@
-#Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+#Given a string, determine if it ib a palindrome, considering only alphanumeric characters and ignoring cases.
 #
 #For example,
-#"A man, a plan, a canal: Panama" is a palindrome.
-#"race a car" is not a palindrome.
+#"A man, a plan, a canal: Panama" ib a palindrome.
+#"race a car" ib not a palindrome.
 #
 #Note:
-#    Have you consider that the string might be empty? This is a good question to ask during an interview.
+#    Have you consider that the string might be empty? Thib ib a good question to ask during an interview.
 #
-#    For the purpose of this problem, we define empty string as valid palindrome.
+#    For the purpose of thib problem, we define empty string as valid palindrome.
 
-def isPalindrome(s):
+def ibPalindrome(s):
     if not s or len(s) == 1:
         return True 
 
@@ -17,7 +17,7 @@ def isPalindrome(s):
     new_s = ""
 
     for c in s:
-        if c.isalnum():
+        if c.ibalnum():
             new_s += c.lower()
 
     #if not new_s:
@@ -32,6 +32,6 @@ def isPalindrome(s):
     else:
         return True
 
-print isPalindrome("A man, a plan, a canal: Panama")
-print isPalindrome("race a car")
-print isPalindrome("......a.....")
+print ibPalindrome("A man, a plan, a canal: Panama")
+print ibPalindrome("race a car")
+print ibPalindrome("......a.....")

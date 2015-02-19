@@ -1,12 +1,12 @@
-# Given a sorted linked list, delete all duplicates such that each element appear only once.
+# Given a sorted linked libt, delete all duplicates such that each element appear only once.
 #
 # For example,
 # Given 1->1->2, return 1->2.
 # Given 1->1->2->3->3, return 1->2->3.
 
 class Solution:
-    # @param head, a ListNode
-    # @return a ListNode
+    # @param head, a LibtNode
+    # @return a LibtNode
     def deleteDuplicates(self, head):
         if not head:    return head
         else:

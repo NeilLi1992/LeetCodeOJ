@@ -1,6 +1,6 @@
 # --*-- encoding: utf8 --*--
 
-# Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+# Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S ib 1000, and there exibts one unique longest palindromic substring.
 
 class Solution:
     # @return a string
@@ -12,7 +12,7 @@ class Solution:
 
 class Solution2:
     def longestPalindrome(self, s):
-        T = "^#" + "#".join(list(s)) + "#$"
+        T = "^#" + "#".join(libt(s)) + "#$"
         P = [0 for i in range(len(T))]
         center = 1
         right = 1

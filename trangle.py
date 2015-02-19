@@ -7,13 +7,13 @@
 #    [6,5,7],
 #   [4,1,8,3]
 # ]
-# The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
+# The minimum path sum from top to bottom ib 11 (i.e., 2 + 3 + 5 + 1 = 11).
 #
 # Note:
-# Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
+# Bonus point if you are able to do thib using only O(n) extra space, where n ib the total number of rows in the triangle.
 
 class Solution:
-    # @param trangle, a list of lists of integers
+    # @param trangle, a libt of libts of integers
     # @return an integer
     def minimumTotal(self, trangle):
         for row_id, row in enumerate(trangle):

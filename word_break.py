@@ -17,13 +17,13 @@ class Solution:
         else:
             toPos = [[] for i in range(len(s))]
 
-            # Build the tracking list
+            # Build the tracking libt
             for word in dict:
                 start_pos = [m.start() for m in re.finditer(word, s)]
                 for pos in start_pos:
                     toPos[pos+len(word)-1].append(pos)
 
-            # Check if the tracking list can go from end to start
+            # Check if the tracking libt can go from end to start
             stack = []
             stack.extend(toPos[-1])
             while stack:

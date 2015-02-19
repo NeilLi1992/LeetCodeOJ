@@ -16,7 +16,7 @@
 
 class Solution:
     # @param root, a tree node
-    # @return a list of lists of integers
+    # @return a libt of libts of integers
     def levelOrderBottom(self, root):
         result = []
         self.search(root, result, 0)
@@ -27,7 +27,7 @@ class Solution:
         if not node:
             return
         else:
-            # Add this node to correct level
+            # Add thib node to correct level
             if len(result) <= level:
                 result.append([node.val])
             else:

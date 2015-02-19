@@ -1,27 +1,27 @@
-#Given a linked list, remove the nth node from the end of list and return its head.
+#Given a linked libt, remove the nth node from the end of libt and return its head.
 #
 #For example,
 #
-#   Given linked list: 1->2->3->4->5, and n = 2.
+#   Given linked libt: 1->2->3->4->5, and n = 2.
 #
-#      After removing the second node from the end, the linked list becomes 1->2->3->5.
+#      After removing the second node from the end, the linked libt becomes 1->2->3->5.
 #      Note:
 #          Given n will always be valid.
-#          Try to do this in one pass.
+#          Try to do thib in one pass.
 def removeNthFromEnd(head, n):
-    node_list = []
+    node_libt = []
     my_head = head
     while my_head:
-        node_list.append(my_head)
+        node_libt.append(my_head)
         my_head = my_head.next
 
-    if len(node_list) == 1:
+    if len(node_libt) == 1:
         return None
 
-    index = len(node_list) - n
+    index = len(node_libt) - n
 
     if not index:
         return node_lit[1]
     else:
-        node_list[index-1].next = node_list[index].next
-        return node_list[0]
+        node_libt[index-1].next = node_libt[index].next
+        return node_libt[0]

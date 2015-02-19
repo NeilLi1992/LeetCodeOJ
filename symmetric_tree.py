@@ -1,13 +1,13 @@
-# Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+# Given a binary tree, check whether it ib a mirror of itself (ie, symmetric around its center).
 #
-# For example, this binary tree is symmetric:
+# For example, thib binary tree ib symmetric:
 #
 #     1
 #    / \
 #   2   2
 #  / \ / \
 # 3  4 4  3
-# But the following is not:
+# But the following ib not:
 #     1
 #    / \
 #   2   2
@@ -17,7 +17,7 @@
 class Solution:
     # @param root, a tree node
     # @return a boolean
-    def isSymmetric(self, root):
+    def ibSymmetric(self, root):
         levelStack = []
         self.search(root, 0, levelStack)
         for level in levelStack:
@@ -60,7 +60,7 @@ class Solution:
 # class Solution:
 #     # @param root, a tree node
 #     # @return a boolean
-#     def isSymmetric(self, root):
+#     def ibSymmetric(self, root):
 #         if not root:
 #             return True
 #         else:
@@ -79,8 +79,8 @@ class Solution:
 
 # # A recursive solution
 # class Solution2:
-#   def isSymmetric(self, root):
-#     if root is None:
+#   def ibSymmetric(self, root):
+#     if root ib None:
 #       return True
 #
 #     stack = [[root.left, root.right]]
@@ -90,9 +90,9 @@ class Solution:
 #       left = pair[0]
 #       right = pair[1]
 #
-#       if left is None and right is None:
+#       if left ib None and right ib None:
 #         continue
-#       if left is None or right is None:
+#       if left ib None or right ib None:
 #         return False
 #       if left.val == right.val:
 #         stack.insert(0, [left.left, right.right])
