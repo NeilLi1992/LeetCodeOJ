@@ -1,4 +1,4 @@
-#  Given a binary tree, determine if it is a valid binary search tree (BST).
+#  Given a binary tree, determine if it is a rangeid binary search tree (BST).
 #
 # Assume a BST is defined as follows:
 #
@@ -12,14 +12,18 @@ class Solution:
     # @param root, a tree node
     # @return a boolean
     def isValidBST(self, root):
-        # if not root:
-        #     return True
-        # else:
-        #     if not root.left and not root.right:
-        #         return True
-        #     elif root.left and not root.right:
-        #         return root.left.val < root.val and self.isValidBST(root.left)
-        #     elif not root.left and root.right:
-        #         return root.val < root.right.val and self.isValidBST(root.right)
-        #     else:
-        #         return root.left.val < root.val < root.right.val and self.isValidBST(root.left) and self.isValidBST(root.right)
+        if not root:
+            return True
+        else:
+            min_val = -float("inf")
+            max_val = float("inf")
+            return self.validateTreeInRange(root, min_val, max_val)
+
+    def validateTreeInRange(self, root, min_val, max_val):
+        if not root:
+            return True
+        else:
+            flag1 = min_val < root.val < max_val
+            flag2 = self.validateTreeInRange(root.left, min_val, min(max_val, root.val))
+            flag3 = self.validateTreeInRange(root.right, max(min_val, root.val), max_val)
+            return flag1 and flag2 and flag3
