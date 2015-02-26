@@ -22,13 +22,11 @@ class Solution:
     # @param n, an integer
     # @return a ListNode
     def reverseBetween(self, head, m, n):
-        if head.next == None:
-            return head
-
         m_node = head
         n_node = head
-        pre_m_node = ListNode(0)
-        pre_m_node.next = m_node
+        fake_head = ListNode(0)
+        fake_head.next = head
+        pre_m_node = fake_head
 
         m -= 1
         while m:
@@ -41,20 +39,17 @@ class Solution:
             n_node = n_node.next
             n -= 1
 
+        pre_m_node.next = n_node
         m_next = m_node.next
-        while m_next != n_node and m_node != n_node:
+        m_node.next = n_node.next
+        while m_node != n_node:
             temp = m_node
             m_node = m_next
             m_next = m_node.next
             m_node.next = temp
 
-        if m_node != n_node:
-            pre_m_node.next.next = n_node.next
-            pre_m_node.next = n_node
-            n_node.next = m_node
-
+        head = fake_head.next
         return head
-
 
 input = [3,5]
 m = 1
