@@ -14,29 +14,33 @@ class Solution:
     # @param head, a ListNode
     # @return a ListNode
     def deleteDuplicates(self, head):
-        fake_head = ListNode(float("inf"))
+        fake_head = ListNode(0)
         fake_head.next = head
-        head = fake_head
-        node_list = []
+        node_list = [fake_head]
+        to_remove = set([])
 
         while head:
+            if head.val == node_list[-1].val and node_list[-1] != fake_head:
+                to_remove.add(head.val)
             node_list.append(head)
             head = head.next
 
         current = node_list[0]
         i = 1
         while i < len(node_list):
-            if node_list[i].val == node_list[i-1].val:
-                del node_list[i]
-            else:
-                i += 1
+            while i < len(node_list) and node_list[i].val in to_remove and node_list[i] != fake_head:
 
+                del node_list[i]
+            i += 1
+
+        # Construct the linked list
         for i in xrange(len(node_list) - 1):
             node_list[i].next = node_list[i+1]
+        node_list[-1].next = None
 
         return fake_head.next
 
-input = [1,1,1,2,3]
+input = [1,1]
 cur = head = ListNode(input[0])
 for i in range(1, len(input)):
     cur.next = ListNode(input[i])
