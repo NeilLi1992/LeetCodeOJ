@@ -31,7 +31,6 @@ class Solution:
                     fromLeft = 0 if j == 0 else book[i][j-1]
                     book[i][j] = fromTop + fromLeft + book[i][j]
 
-        print book
         return book[-1][-1]
 
 # obstacleGrid = [
