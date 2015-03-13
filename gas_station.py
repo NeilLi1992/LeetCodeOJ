@@ -28,3 +28,25 @@ class Solution:
                 return start
         else:
             return -1
+
+class Solution2:
+    # @param gas, a list of integers
+    # @param cost, a list of integers
+    # @return an integer
+    def canCompleteCircuit(self, gas, cost):
+        N = len(gas)
+        travel_list = 2 * range(N)
+        start = tank = 0
+        for i, station in enumerate(travel_list):
+            tank += gas[station]
+            tank -= cost[station]
+            if tank >= 0 and travel_list[i+1] == start:
+                # Find the start index
+                return start
+            elif tank < 0:
+                if i+1 > travel_list[i+1]:
+                    # Won't find any more
+                    return -1
+                else:
+                    tank = 0
+                    start = travel_list[i+1]
