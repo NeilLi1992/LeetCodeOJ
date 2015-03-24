@@ -31,5 +31,18 @@ class Solution:
             self.decode(s[1:])
             self.decode(s[2:])
 
+class Solution2:
+    def numDecodings(self, s):
+        if not s:
+            return 0
+
+        result = 1
+        s = '9' + s
+        for i in range(1, len(s)):
+            if 10 <= int(s[i-1:i+1]) <= 26:
+                result += 1
+
+        return result
+
 s = "12"
-print Solution().numDecodings(s)
+print Solution2().numDecodings(s)
