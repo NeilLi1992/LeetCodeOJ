@@ -36,13 +36,23 @@ class Solution2:
         if not s:
             return 0
 
-        result = 1
         s = '9' + s
+        book = [0 for i in range(len(s))]
+        book[0] = 1
         for i in range(1, len(s)):
-            if 10 <= int(s[i-1:i+1]) <= 26:
-                result += 1
+            if s[i] != '0':
+                if 11<= int(s[i-1:i+1]) <= 26:
+                    book[i] = book[i-2] + book[i-1]
+                else:
+                    book[i] = book[i-1]
+            else:
+                if s[i-1] == '0' or int(s[i-1]) > 2:
+                    # This 0 can't be deciphered
+                    return 0
+                else:
+                    book[i] = book[i-2]
 
-        return result
+        return book[-1]
 
-s = "12"
+s = "1102"
 print Solution2().numDecodings(s)
