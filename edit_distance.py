@@ -14,24 +14,24 @@ class Solution:
         if not word2:
             return len(word1)
 
-        edit = [[0 for _ in range(len(word2))] for _ in range(len(word1))]
-        for i in range(len(word1)):
-            for j in range(len(word2)):
-                if not i and not j:
-                    edit[i][j] = 0 if word1[i] == word2[j] else 1
-                elif not i:
-                    edit[i][j] = edit[i][j-1] if word1[i] == word2[j] else edit[i][j-1] + 1
-                elif not j:
-                    edit[i][j] = edit[i-1][j] if word1[i] == word2[j] else edit[i-1][j] + 1
+        edit = [[0 for _ in range(len(word2)+1)] for _ in range(len(word1)+1)]
+
+        for j in range(len(word2)+1):
+            edit[0][j] = j
+
+        for i in range(len(word1)+1):
+            edit[i][0] = i
+
+        for i in range(1, len(word1)+1):
+            for j in range(1, len(word2)+1):
+                if word1[i-1] == word2[j-1]:
+                    edit[i][j] = min(edit[i-1][j] + 1, edit[i][j-1] + 1, edit[i-1][j-1])
                 else:
-                    if word1[i] == word2[j]:
-                        edit[i][j] = min(edit[i-1][j-1], edit[i-1][j], edit[i][j-1])
-                    else:
-                        edit[i][j] = min(edit[i-1][j-1]+1, edit[i-1][j]+1, edit[i][j-1]+1)
+                    edit[i][j] = min(edit[i-1][j] + 1, edit[i][j-1] + 1, edit[i-1][j-1] + 1)
 
         return edit[-1][-1]
 
 
 word1 = "abcdxabcdasde"
-word2 = "qwkvokasd"
+word2 = "qwkyokasd"
 print Solution().minDistance(word1, word2)
