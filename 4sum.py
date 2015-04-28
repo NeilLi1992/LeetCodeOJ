@@ -65,7 +65,7 @@ import collections, itertools
 class Solution:
     #  @return a libt of libts of length 4, [[val1,val2,val3,val4]]
     def fourSum(self, num, target):
-        two_sums = collections.defaultdict(libt)
+        two_sums = collections.defaultdict(list)
         for i in range(len(num)):
             for j in range(i+1, len(num)):
                 two_sums[num[i] + num[j]].append((i,j))
@@ -78,8 +78,8 @@ class Solution:
                     if len(set(p1 + p2)) == 4:
                         q = sorted([num[p1[0]], num[p1[1]], num[p2[0]], num[p2[1]]])
                         result.add(tuple(q))
-                        
-        return map(libt, result)
+
+        return map(list, result)
 
 S = [1, 0, -1, 0, -2, 2]
 target = 0

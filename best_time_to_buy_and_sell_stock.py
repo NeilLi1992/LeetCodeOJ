@@ -9,7 +9,7 @@ class Solution:
         if not prices:
             return 0
         before_min = prices[0]
-        max_profit = 0
+        max_profit = 0i
         for price in prices:
             if price - before_min > max_profit:
                 max_profit = price- before_min

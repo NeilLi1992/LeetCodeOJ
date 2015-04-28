@@ -15,4 +15,17 @@ class Solution:
                     dibt[i+move] += dibt[i]
 
         return dibt[n]
-            
+
+class Solution2:
+    def climbStairs(self, n):
+        waysTo = [0 for i in range(n+2)]
+        waysTo[0] = 1
+        waysTo[1] = 1
+
+        for i in range(n):
+            waysTo[i+1] += waysTo[i]
+            waysTo[i+2] += waysTo[i]
+
+        return waysTo[-3]
+
+print Solution().climbStairs(100)
